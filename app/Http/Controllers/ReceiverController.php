@@ -180,7 +180,7 @@ class ReceiverController extends Controller
             case 1:
                 $ch = curl_init();
 
-                curl_setopt($ch, CURLOPT_URL, "localhost/c4c-test/index.php/core");
+                curl_setopt($ch, CURLOPT_URL, "https://c4c.mhealthkenya.co.ke/core");
                 curl_setopt($ch, CURLOPT_HEADER, 0);
 
                 curl_exec($ch);
@@ -189,14 +189,13 @@ class ReceiverController extends Controller
 
                 $ch = curl_init();
 
-                    // curl_setopt($ch, CURLOPT_URL, "http://c4c-test.localhost/index.php/core");
-                    curl_setopt($ch, CURLOPT_URL, "localhost/c4c-dev/index.php/core");
-                    
-                    curl_setopt($ch, CURLOPT_HEADER, 0);
+                curl_setopt($ch, CURLOPT_URL, "https://c4c.mhealthkenya.co.ke/core");
+                
+                curl_setopt($ch, CURLOPT_HEADER, 0);
 
-                    curl_exec($ch);
+                curl_exec($ch);
 
-                    curl_close($ch);
+                curl_close($ch);
 
 
                 echo 'Done task 1';
@@ -206,7 +205,7 @@ class ReceiverController extends Controller
                 //ushauri
                 $ch = curl_init();
 
-                curl_setopt($ch, CURLOPT_URL, "http://ushauri.localhost/chore/receiver/$LastInsertId");
+                curl_setopt($ch, CURLOPT_URL, "https://ushauri.mhealthkenya.co.ke/chore/receiver/$LastInsertId");
                 curl_setopt($ch, CURLOPT_HEADER, 0);
 
                 curl_exec($ch);
@@ -216,7 +215,7 @@ class ReceiverController extends Controller
                 //ushauri new
                 $ch = curl_init();
 
-                curl_setopt($ch, CURLOPT_URL, "http://ushaurinew.localhost/chore/receiver/$LastInsertId");
+                curl_setopt($ch, CURLOPT_URL, "https://ushaurinew.mhealthkenya.co.ke/chore/receiver/$LastInsertId");
                 curl_setopt($ch, CURLOPT_HEADER, 0);
 
                 curl_exec($ch);
@@ -229,7 +228,7 @@ class ReceiverController extends Controller
             case 3:
                 $ch = curl_init();
 
-                curl_setopt($ch, CURLOPT_URL, "http://localhost/c4c-test-BE");
+                curl_setopt($ch, CURLOPT_URL, "http://41.220.229.130/c4c-test-BE");
                 curl_setopt($ch, CURLOPT_HEADER, 0);
 
                 curl_exec($ch);
@@ -242,7 +241,7 @@ class ReceiverController extends Controller
             case 4:
                 $ch = curl_init();
 
-                curl_setopt($ch, CURLOPT_URL, "http://t4a.localhost/chore/receiver/$LastInsertId");
+                curl_setopt($ch, CURLOPT_URL, "https://t4a.mhealthkenya.co.ke/chore/receiver/$LastInsertId");
                 curl_setopt($ch, CURLOPT_HEADER, 0);
 
                 curl_exec($ch);
@@ -256,7 +255,7 @@ class ReceiverController extends Controller
 
                 $ch = curl_init();
 
-                curl_setopt($ch, CURLOPT_URL, "http://mobivet.localhost/process_inbox");
+                curl_setopt($ch, CURLOPT_URL, "http://mobivet.mhealthkenya.org/process_inbox");
                 curl_setopt($ch, CURLOPT_HEADER, 0);
 
                 curl_exec($ch);
@@ -266,9 +265,7 @@ class ReceiverController extends Controller
                 // C4C Test URL
 
                 $ch = curl_init();
-
-                // curl_setopt($ch, CURLOPT_URL, "http://c4c-test.localhost/index.php/core");
-                curl_setopt($ch, CURLOPT_URL, "localhost/c4c-dev/index.php/core");
+                curl_setopt($ch, CURLOPT_URL, "https://c4c-test.mhealthkenya.co.ke/core");
                 
                 curl_setopt($ch, CURLOPT_HEADER, 0);
 
