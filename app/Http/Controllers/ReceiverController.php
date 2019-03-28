@@ -66,6 +66,10 @@ class ReceiverController extends Controller
             $inb->LinkId = $request->linkId;
 
             $inb->save();
+            $lastID = $inb->id;
+            $task = 4;
+
+            $this->task($task, $lastID);
 
         }
 
@@ -97,6 +101,11 @@ class ReceiverController extends Controller
 
             $inb1->save();
 
+            $lastID1 = $inb1->id;
+            $task1 = 2;
+
+            $this->task($task1, $lastID1);
+
         }
 
         if($request->to == '40145'){
@@ -110,6 +119,10 @@ class ReceiverController extends Controller
             $inb->LinkId = $request->linkId;
 
             $inb->save();
+            $lastID = $inb->id;
+            $task = 1;
+
+            $this->task($task, $lastID);
         }
 
         if($request->to == '40149'){
@@ -145,6 +158,10 @@ class ReceiverController extends Controller
             $inb2->linkid = $request->linkId;
 
             $inb2->save();
+            $lastID = $inb2->id;
+            $task = 5;
+
+            $this->task($task, $lastID);
 
             $inb3 = new T4AUshauriInbox;
 
@@ -167,7 +184,7 @@ class ReceiverController extends Controller
 
                 curl_setopt($ch, CURLOPT_URL, "https://c4c.mhealthkenya.co.ke/core");
                 curl_setopt($ch, CURLOPT_HEADER, 0);
-
+                curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
                 curl_exec($ch);
 
                 curl_close($ch);
@@ -204,7 +221,7 @@ class ReceiverController extends Controller
 
                 curl_setopt($ch, CURLOPT_URL, "https://ushaurinew.mhealthkenya.co.ke/chore/receiver/$LastInsertId");
                 curl_setopt($ch, CURLOPT_HEADER, 0);
-
+                curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
                 curl_exec($ch);
 
                 curl_close($ch);
@@ -217,7 +234,7 @@ class ReceiverController extends Controller
 
                 curl_setopt($ch, CURLOPT_URL, "http://41.220.229.130/c4c-test-BE");
                 curl_setopt($ch, CURLOPT_HEADER, 0);
-
+                curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
                 curl_exec($ch);
 
                 curl_close($ch);
@@ -230,7 +247,7 @@ class ReceiverController extends Controller
 
                 curl_setopt($ch, CURLOPT_URL, "https://t4a.mhealthkenya.co.ke/chore/receiver/$LastInsertId");
                 curl_setopt($ch, CURLOPT_HEADER, 0);
-
+                curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
                 curl_exec($ch);
 
                 curl_close($ch);
@@ -244,7 +261,7 @@ class ReceiverController extends Controller
 
                 curl_setopt($ch, CURLOPT_URL, "http://mobivet.mhealthkenya.org/process_inbox");
                 curl_setopt($ch, CURLOPT_HEADER, 0);
-
+                curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
                 curl_exec($ch);
 
                 curl_close($ch);
@@ -253,7 +270,7 @@ class ReceiverController extends Controller
 
                 $ch = curl_init();
                 curl_setopt($ch, CURLOPT_URL, "https://c4c-test.mhealthkenya.co.ke/core");
-                
+                curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
                 curl_setopt($ch, CURLOPT_HEADER, 0);
 
                 curl_exec($ch);
@@ -272,7 +289,7 @@ class ReceiverController extends Controller
                 // curl_setopt($ch, CURLOPT_URL, "http://c4c-test.localhost/index.php/core");
                 //$LastInsertId
                 curl_setopt($ch, CURLOPT_URL, "109.74.200.136/KAPS/index.php/survey/responses/$LastInsertId");
-                
+                curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
                 curl_setopt($ch, CURLOPT_HEADER, 0);
 
                 curl_exec($ch);
