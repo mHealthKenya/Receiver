@@ -66,10 +66,6 @@ class ReceiverController extends Controller
 
             $inb->save();
 
-            $LastInsertId=$inb->id();
-            $task = 4;
-            return $this->task($task,$LastInsertId);
-
         }
 
         if($request->to == '40146'){
@@ -84,10 +80,10 @@ class ReceiverController extends Controller
 
             $inb->save();
 
-            $new_LastInsertId=$inb->id();
-
+            $lastID = $inb->id();
             $task = 2;
-            return $this->task($task,$new_LastInsertId);
+
+            $this->task($task, $lastID);
 
             $inb1 = new UshauriNEWInbox;
 
@@ -99,10 +95,6 @@ class ReceiverController extends Controller
             $inb1->LinkId = $request->linkId;
 
             $inb1->save();
-            $ushauri_newLastInsertId=$inb1->id();		
-
-            $task = 2;
-            return $this->task($task,$ushauri_newLastInsertId);
 
         }
 
@@ -117,11 +109,6 @@ class ReceiverController extends Controller
             $inb->LinkId = $request->linkId;
 
             $inb->save();
-
-            $task = 1;
-            $LastInsertId="";
-
-            return $this->task($task,$LastInsertId);
         }
 
         if($request->to == '40149'){
@@ -157,9 +144,6 @@ class ReceiverController extends Controller
             $inb2->linkid = $request->linkId;
 
             $inb2->save();
-            $LastInsertId=$inb2->id();
-            $task = 5;
-            return $this->task($task,$LastInsertId);
 
             $inb3 = new T4AUshauriInbox;
 
@@ -176,6 +160,7 @@ class ReceiverController extends Controller
     }
 
     function task($task,$LastInsertId) {
+        Log::info("ID: ". $LastInsertId.", TASK: ".$task);
         switch ($task) {
             case 1:
                 $ch = curl_init();
