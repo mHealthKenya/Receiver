@@ -14,6 +14,7 @@ use App\C4CInbox;
 use App\C4CTESTInbox;
 use App\T4AInbox;
 use App\T4AUshauriInbox;
+use Log;
 
 class ReceiverController extends Controller
 {
