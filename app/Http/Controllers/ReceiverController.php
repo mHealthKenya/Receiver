@@ -193,6 +193,7 @@ class ReceiverController extends Controller
 
                 curl_setopt($ch, CURLOPT_URL, "https://ushauri.mhealthkenya.co.ke/chore/receiver/$LastInsertId");
                 curl_setopt($ch, CURLOPT_HEADER, 0);
+                curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
 
                 curl_exec($ch);
 
