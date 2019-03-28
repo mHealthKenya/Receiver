@@ -66,6 +66,10 @@ class ReceiverController extends Controller
 
             $inb->save();
 
+            $LastInsertId=$inb->id();
+            $task = 4;
+            return $this->task($task,$LastInsertId);
+
         }
 
         if($request->to == '40146'){
@@ -80,16 +84,25 @@ class ReceiverController extends Controller
 
             $inb->save();
 
-            $inb = new UshauriNEWInbox;
+            $new_LastInsertId=$inb->id();
 
-            $inb->destination = $request->to;
-            $inb->source = $request->from; 
-            $inb->msg = $request->text;
-            $inb->receivedtime = $request->date;
-            $inb->reference = $request->id;
-            $inb->LinkId = $request->linkId;
+            $task = 2;
+            return $this->task($task,$new_LastInsertId);
 
-            $inb->save();
+            $inb1 = new UshauriNEWInbox;
+
+            $inb1->destination = $request->to;
+            $inb1->source = $request->from; 
+            $inb1->msg = $request->text;
+            $inb1->receivedtime = $request->date;
+            $inb1->reference = $request->id;
+            $inb1->LinkId = $request->linkId;
+
+            $inb1->save();
+            $ushauri_newLastInsertId=$inb1->id();		
+
+            $task = 2;
+            return $this->task($task,$ushauri_newLastInsertId);
 
         }
 
@@ -104,6 +117,11 @@ class ReceiverController extends Controller
             $inb->LinkId = $request->linkId;
 
             $inb->save();
+
+            $task = 1;
+            $LastInsertId="";
+
+            return $this->task($task,$LastInsertId);
         }
 
         if($request->to == '40149'){
@@ -139,6 +157,9 @@ class ReceiverController extends Controller
             $inb2->linkid = $request->linkId;
 
             $inb2->save();
+            $LastInsertId=$inb2->id();
+            $task = 5;
+            return $this->task($task,$LastInsertId);
 
             $inb3 = new T4AUshauriInbox;
 
@@ -153,4 +174,134 @@ class ReceiverController extends Controller
         }
 
     }
+
+    function task($task,$LastInsertId) {
+        switch ($task) {
+            case 1:
+                $ch = curl_init();
+
+                curl_setopt($ch, CURLOPT_URL, "localhost/c4c-test/index.php/core");
+                curl_setopt($ch, CURLOPT_HEADER, 0);
+
+                curl_exec($ch);
+
+                curl_close($ch);
+
+                $ch = curl_init();
+
+                    // curl_setopt($ch, CURLOPT_URL, "http://c4c-test.localhost/index.php/core");
+                    curl_setopt($ch, CURLOPT_URL, "localhost/c4c-dev/index.php/core");
+                    
+                    curl_setopt($ch, CURLOPT_HEADER, 0);
+
+                    curl_exec($ch);
+
+                    curl_close($ch);
+
+
+                echo 'Done task 1';
+            break;
+
+            case 2:
+                //ushauri
+                $ch = curl_init();
+
+                curl_setopt($ch, CURLOPT_URL, "http://ushauri.localhost/chore/receiver/$LastInsertId");
+                curl_setopt($ch, CURLOPT_HEADER, 0);
+
+                curl_exec($ch);
+
+                curl_close($ch);
+
+                //ushauri new
+                $ch = curl_init();
+
+                curl_setopt($ch, CURLOPT_URL, "http://ushaurinew.localhost/chore/receiver/$LastInsertId");
+                curl_setopt($ch, CURLOPT_HEADER, 0);
+
+                curl_exec($ch);
+
+                curl_close($ch);
+
+
+
+            break;
+            case 3:
+                $ch = curl_init();
+
+                curl_setopt($ch, CURLOPT_URL, "http://localhost/c4c-test-BE");
+                curl_setopt($ch, CURLOPT_HEADER, 0);
+
+                curl_exec($ch);
+
+                curl_close($ch);
+
+                echo 'Done task 3';
+
+            break;
+            case 4:
+                $ch = curl_init();
+
+                curl_setopt($ch, CURLOPT_URL, "http://t4a.localhost/chore/receiver/$LastInsertId");
+                curl_setopt($ch, CURLOPT_HEADER, 0);
+
+                curl_exec($ch);
+
+                curl_close($ch);
+
+                echo 'Done task 4';
+
+            break;
+            case 5:
+
+                $ch = curl_init();
+
+                curl_setopt($ch, CURLOPT_URL, "http://mobivet.localhost/process_inbox");
+                curl_setopt($ch, CURLOPT_HEADER, 0);
+
+                curl_exec($ch);
+
+                curl_close($ch);
+
+                // C4C Test URL
+
+                $ch = curl_init();
+
+                // curl_setopt($ch, CURLOPT_URL, "http://c4c-test.localhost/index.php/core");
+                curl_setopt($ch, CURLOPT_URL, "localhost/c4c-dev/index.php/core");
+                
+                curl_setopt($ch, CURLOPT_HEADER, 0);
+
+                curl_exec($ch);
+
+                curl_close($ch);
+
+
+                //Kaps URL
+
+
+
+
+
+                $ch = curl_init();
+
+                // curl_setopt($ch, CURLOPT_URL, "http://c4c-test.localhost/index.php/core");
+                //$LastInsertId
+                curl_setopt($ch, CURLOPT_URL, "109.74.200.136/KAPS/index.php/survey/responses/$LastInsertId");
+                
+                curl_setopt($ch, CURLOPT_HEADER, 0);
+
+                curl_exec($ch);
+
+                curl_close($ch);
+
+                echo 'Done task 5';
+
+            break;
+
+            default:
+            break;
+        }
+}
+
 }
