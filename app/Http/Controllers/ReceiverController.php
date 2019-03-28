@@ -80,7 +80,7 @@ class ReceiverController extends Controller
 
             $inb->save();
 
-            $lastID = $inb->id();
+            $lastID = $inb->id;
             $task = 2;
 
             $this->task($task, $lastID);
