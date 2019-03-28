@@ -161,7 +161,6 @@ class ReceiverController extends Controller
     }
 
     function task($task,$LastInsertId) {
-        Log::info("ID: ". $LastInsertId.", TASK: ".$task);
         switch ($task) {
             case 1:
                 $ch = curl_init();
@@ -188,7 +187,8 @@ class ReceiverController extends Controller
             break;
 
             case 2:
-                //ushauri
+                
+                Log::info("ID: ". $LastInsertId.", TASK: ".$task."LINK: https://ushauri.mhealthkenya.co.ke/chore/receiver/$LastInsertId");
                 $ch = curl_init();
 
                 curl_setopt($ch, CURLOPT_URL, "https://ushauri.mhealthkenya.co.ke/chore/receiver/$LastInsertId");
