@@ -53,6 +53,10 @@ class ReceiverController extends Controller
             $inb1->LinkId = $request->linkId;
 
             $inb1->save();
+            $lastID = $inb1->id;
+            $task = 3;
+
+            $this->task($task, $lastID);
         }
 
         if($request->to == '40148'){
@@ -233,7 +237,7 @@ class ReceiverController extends Controller
             case 3:
                 $ch = curl_init();
 
-                curl_setopt($ch, CURLOPT_URL, "http://41.220.229.130/c4c-test-BE");
+                curl_setopt($ch, CURLOPT_URL, "https://mlabtest.mhealthkenya.co.ke/process/inbox/$LastInsertId");
                 curl_setopt($ch, CURLOPT_HEADER, 0);
                 curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
                 curl_exec($ch);
