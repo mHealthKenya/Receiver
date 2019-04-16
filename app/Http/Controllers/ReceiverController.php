@@ -165,6 +165,8 @@ class ReceiverController extends Controller
             $lastID = $inb2->id;
             $task = 5;
 
+            //Comment the code below if SMS are being looped.
+            
             $this->task($task, $lastID);
 
             $inb3 = new T4AUshauriInbox;
@@ -293,7 +295,7 @@ class ReceiverController extends Controller
 
                 // curl_setopt($ch, CURLOPT_URL, "http://c4c-test.localhost/index.php/core");
                 //$LastInsertId
-                curl_setopt($ch, CURLOPT_URL, "109.74.200.136/KAPS/index.php/survey/responses/$LastInsertId");
+                curl_setopt($ch, CURLOPT_URL, "http://41.220.229.130/KAPS/index.php/survey/");
                 curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
                 curl_setopt($ch, CURLOPT_HEADER, 0);
 

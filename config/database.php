@@ -188,7 +188,7 @@ return [
             'driver' => 'mysql',
             'host' => '41.215.81.58',
             'port' => '3307',
-            'database' => 'kaps',
+            'database' => 'KAPS',
             'username' => 'mlab',
             'password' =>'Mlab1234',
             'charset' => 'utf8mb4',
