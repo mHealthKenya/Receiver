@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Receiver;
+use App\Report;
 use App\UshauriInbox;
 use App\UshauriNEWInbox;
 use App\MLABInbox;
@@ -130,6 +131,18 @@ class ReceiverController extends Controller
         }
 
         if($request->to == '40149'){
+
+            $mpunda = new Report;
+
+            $mpunda->shortCode = $request->to;
+            $mpunda->source = $request->from; 
+            $mpunda->message = $request->text;
+            $mpunda->received = $request->date;
+            $mpunda->reference = $request->id;
+            $mpunda->linkId = $request->linkId;
+    
+            $mpunda->save();
+
             $inb = new C4CTESTInbox;
 
             $inb->shortCode = $request->to;

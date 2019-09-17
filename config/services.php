@@ -43,5 +43,13 @@ return [
             'tolerance' => env('STRIPE_WEBHOOK_TOLERANCE', 300),
         ],
     ],
+    
+    'firebase' => [
+        'api_key' => 'AIzaSyDv_iTZLrVUu9GfQ_XqidHoMxsTSQbwZlM', // Only used for JS integration
+        'auth_domain' => 'mpunda-163817.firebaseapp.com', // Only used for JS integration
+        'database_url' => 'https://mpunda-163817.firebaseio.com/',
+        'secret' => 'flwlXrkHZprH1ZIib5imZIfnpmTwoCRnmaLsJeIl',
+        'storage_bucket' => 'mpunda-163817.appspot.com', // Only used for JS integration
+    ],
 
 ];

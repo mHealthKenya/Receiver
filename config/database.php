@@ -42,7 +42,7 @@ return [
 
         'mlab' => [
             'driver' => 'mysql',
-            'host' => '41.220.229.130',
+            'host' => '41.220.229.138',
             'port' => '3347',
             'database' => 'mlab',
             'username' => 'sync_user',
@@ -60,11 +60,11 @@ return [
 
         'ushauri' => [
             'driver' => 'mysql',
-            'host' => '41.220.229.130',
+            'host' => '41.220.229.138',
             'port' => '3307',
             'database' => 'ushauri',
-            'username' => 'chris',
-            'password' =>'|/1~LpYDghj,^.Ss*HYT%$CFGHahf',
+            'username' => 'sync_user',
+            'password' =>'=GZs4FY2G538:^?&gqa!#$%',
             'charset' => 'utf8mb4',
             'collation' => 'utf8mb4_unicode_ci',
             'prefix' => '',
@@ -77,11 +77,11 @@ return [
         ],
         'ushauri_new' => [
             'driver' => 'mysql',
-            'host' => '41.220.229.130',
+            'host' => '41.220.229.138',
             'port' => '3307',
             'database' => 'ushauri_new',
-            'username' => 'chris',
-            'password' =>'|/1~LpYDghj,^.Ss*HYT%$CFGHahf',
+            'username' => 'sync_user',
+            'password' =>'=GZs4FY2G538:^?&gqa!#$%',
             'charset' => 'utf8mb4',
             'collation' => 'utf8mb4_unicode_ci',
             'prefix' => '',
@@ -95,11 +95,11 @@ return [
 
         't4a' => [
             'driver' => 'mysql',
-            'host' => '41.220.229.130',
+            'host' => '41.220.229.138',
             'port' => '3307',
             'database' => 't4a',
-            'username' => 'chris',
-            'password' =>'|/1~LpYDghj,^.Ss*HYT%$CFGHahf',
+            'username' => 'sync_user',
+            'password' =>'=GZs4FY2G538:^?&gqa!#$%',
             'charset' => 'utf8mb4',
             'collation' => 'utf8mb4_unicode_ci',
             'prefix' => '',
@@ -114,11 +114,11 @@ return [
         
         't4a_ushauri' => [
             'driver' => 'mysql',
-            'host' => '41.220.229.130',
+            'host' => '41.220.229.138',
             'port' => '3307',
             'database' => 't4a_ushauri',
-            'username' => 'chris',
-            'password' =>'|/1~LpYDghj,^.Ss*HYT%$CFGHahf',
+            'username' => 'sync_user',
+            'password' =>'=GZs4FY2G538:^?&gqa!#$%',
             'charset' => 'utf8mb4',
             'collation' => 'utf8mb4_unicode_ci',
             'prefix' => '',
@@ -133,7 +133,7 @@ return [
 
         'c4c' => [
             'driver' => 'mysql',
-            'host' => '41.220.229.130',
+            'host' => '41.220.229.138',
             'port' => '3347',
             'database' => 'c4c_live',
             'username' => 'sync_user',
@@ -151,7 +151,7 @@ return [
 
         'c4c_test' => [
             'driver' => 'mysql',
-            'host' => '41.220.229.130',
+            'host' => '41.220.229.138',
             'port' => '3347',
             'database' => 'c4c_test',
             'username' => 'sync_user',
@@ -168,7 +168,7 @@ return [
         ],
         'lima' => [
             'driver' => 'mysql',
-            'host' => '41.220.229.130',
+            'host' => '41.220.229.138',
             'port' => '3347',
             'database' => 'mobivet',
             'username' => 'sync_user',
@@ -184,13 +184,49 @@ return [
             ]) : [],
         ],
 
-        'kaps' => [
+         'nut' => [
             'driver' => 'mysql',
-            'host' => '41.215.81.58',
-            'port' => '3307',
-            'database' => 'KAPS',
+            'host' => '197.232.36.170',
+            'port' => '7033',
+            'database' => 'nutritionApp',
             'username' => 'mlab',
             'password' =>'Mlab1234',
+            'charset' => 'utf8mb4',
+            'collation' => 'utf8mb4_unicode_ci',
+            'prefix' => '',
+            'prefix_indexes' => true,
+            'strict' => true,
+            'engine' => null,
+            'options' => extension_loaded('pdo_mysql') ? array_filter([
+                PDO::MYSQL_ATTR_SSL_CA => env('MYSQL_ATTR_SSL_CA'),
+            ]) : [],
+        ],
+
+        'afyapoa' => [
+            'driver' => 'mysql',
+            'host' => '197.232.36.170',
+            'port' => '7033',
+            'database' => 'AfyaPoa',
+            'username' => 'mlab',
+            'password' =>'Mlab1234',
+            'charset' => 'utf8mb4',
+            'collation' => 'utf8mb4_unicode_ci',
+            'prefix' => '',
+            'prefix_indexes' => true,
+            'strict' => true,
+            'engine' => null,
+            'options' => extension_loaded('pdo_mysql') ? array_filter([
+                PDO::MYSQL_ATTR_SSL_CA => env('MYSQL_ATTR_SSL_CA'),
+            ]) : [],
+        ],
+
+        'kaps' => [
+            'driver' => 'mysql',
+            'host' => '41.220.229.138',
+            'port' => '3347',
+            'database' => 'KAPS',
+            'username' => 'sync_user',
+            'password' =>'=GZs4FY2G538:^?&gqa!#$%',
             'charset' => 'utf8mb4',
             'collation' => 'utf8mb4_unicode_ci',
             'prefix' => '',
@@ -224,11 +260,11 @@ return [
 
         'pgsql' => [
             'driver' => 'pgsql',
-            'host' => '41.204.187.154',
-            'port' => '5432',
+            'host' => '197.232.36.170',
+            'port' => '2210',
             'database' => 'mlab',
             'username' => 'postgres',
-            'password' => '8{7<i<`W6E{{!4p',
+            'password' => 'NC`{}?!lmn45',
             'charset' => 'utf8',
             'prefix' => '',
             'prefix_indexes' => true,
