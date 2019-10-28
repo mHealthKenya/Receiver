@@ -203,24 +203,12 @@ class ReceiverController extends Controller
             case 1:
                 $ch = curl_init();
 
-                curl_setopt($ch, CURLOPT_URL, "https://c4c.mhealthkenya.co.ke/core");
+                curl_setopt($ch, CURLOPT_URL, "https://c4c.localhost/core");
                 curl_setopt($ch, CURLOPT_HEADER, 0);
                 curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
                 curl_exec($ch);
 
                 curl_close($ch);
-
-                $ch = curl_init();
-
-                curl_setopt($ch, CURLOPT_URL, "https://c4c.mhealthkenya.co.ke/core");
-                
-                curl_setopt($ch, CURLOPT_HEADER, 0);
-
-                curl_exec($ch);
-
-                curl_close($ch);
-
-
                 echo 'Done task 1';
             break;
 
@@ -228,7 +216,7 @@ class ReceiverController extends Controller
                 
                 $ch = curl_init();
 
-                curl_setopt($ch, CURLOPT_URL, "https://ushauri.mhealthkenya.co.ke/chore/receiver/$LastInsertId");
+                curl_setopt($ch, CURLOPT_URL, "https://ushauri.localhost/chore/receiver/$LastInsertId");
                 curl_setopt($ch, CURLOPT_HEADER, 0);
                 curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
 
@@ -239,33 +227,32 @@ class ReceiverController extends Controller
                 //ushauri new
                 $ch = curl_init();
 
-                curl_setopt($ch, CURLOPT_URL, "https://ushaurinew.mhealthkenya.co.ke/chore/receiver/$LastInsertId");
+                curl_setopt($ch, CURLOPT_URL, "https://ushaurinew.localhost/chore/receiver/$LastInsertId");
                 curl_setopt($ch, CURLOPT_HEADER, 0);
                 curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
                 curl_exec($ch);
 
                 curl_close($ch);
 
-
-
-            break;
             case 3:
                 $ch = curl_init();
 
-                curl_setopt($ch, CURLOPT_URL, "https://mlabtest.mhealthkenya.co.ke/process/inbox/$LastInsertId");
+                curl_setopt($ch, CURLOPT_URL, "https://mlab.localhost/process/inbox/$LastInsertId");
                 curl_setopt($ch, CURLOPT_HEADER, 0);
                 curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
                 curl_exec($ch);
 
                 curl_close($ch);
 
-                echo 'Done task 3';
+                echo 'Done task 4';
+
+            break;
 
             break;
             case 4:
                 $ch = curl_init();
 
-                curl_setopt($ch, CURLOPT_URL, "https://t4a.mhealthkenya.co.ke/chore/receiver/$LastInsertId");
+                curl_setopt($ch, CURLOPT_URL, "https://t4a.localhost/chore/receiver/$LastInsertId");
                 curl_setopt($ch, CURLOPT_HEADER, 0);
                 curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
                 curl_exec($ch);
@@ -279,7 +266,7 @@ class ReceiverController extends Controller
 
                 $ch = curl_init();
 
-                curl_setopt($ch, CURLOPT_URL, "http://mobivet.mhealthkenya.org/process_inbox");
+                curl_setopt($ch, CURLOPT_URL, "http://lima.localhost/process_inbox");
                 curl_setopt($ch, CURLOPT_HEADER, 0);
                 curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
                 curl_exec($ch);
@@ -289,7 +276,7 @@ class ReceiverController extends Controller
                 // C4C Test URL
 
                 $ch = curl_init();
-                curl_setopt($ch, CURLOPT_URL, "https://c4c-test.mhealthkenya.co.ke/core");
+                curl_setopt($ch, CURLOPT_URL, "https://c4c-test.localhost/core");
                 curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
                 curl_setopt($ch, CURLOPT_HEADER, 0);
 
@@ -308,7 +295,7 @@ class ReceiverController extends Controller
 
                 // curl_setopt($ch, CURLOPT_URL, "http://c4c-test.localhost/index.php/core");
                 //$LastInsertId
-                curl_setopt($ch, CURLOPT_URL, "http://41.220.229.130/KAPS/index.php/survey/");
+                curl_setopt($ch, CURLOPT_URL, "http://127.0.0.1/KAPS/index.php/survey/");
                 curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
                 curl_setopt($ch, CURLOPT_HEADER, 0);
 
