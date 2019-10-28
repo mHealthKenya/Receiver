@@ -233,6 +233,7 @@ class ReceiverController extends Controller
                 curl_exec($ch);
 
                 curl_close($ch);
+            break;
 
             case 3:
                 $ch = curl_init();
