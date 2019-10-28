@@ -1,0 +1,2 @@
+[Mon Oct 28 14:08:32.725505 2019] [proxy_fcgi:error] [pid 38104] [client 164.177.141.82:55446] AH01067: Failed to read FastCGI header
+[Mon Oct 28 14:08:32.725553 2019] [proxy_fcgi:error] [pid 38104] (104)Connection reset by peer: [client 164.177.141.82:55446] AH01075: Error dispatching request to : 

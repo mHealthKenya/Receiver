@@ -33,16 +33,16 @@ class ReceiverController extends Controller
         $rec->save();
 
         if($request->to == '40147'){
-            $inb = new MLABInbox;
+            #$inb = new MLABInbox;
 
-            $inb->shortCode = $request->to;
-            $inb->MSISDN = $request->from; 
-            $inb->message = $request->text;
-            $inb->msgDateCreated = $request->date;
-            $inb->message_id = $request->id;
-            $inb->LinkId = $request->linkId;
+            #$inb->shortCode = $request->to;
+            #$inb->MSISDN = $request->from; 
+            #$inb->message = $request->text;
+            #$inb->msgDateCreated = $request->date;
+            #$inb->message_id = $request->id;
+            #$inb->LinkId = $request->linkId;
 
-            $inb->save();
+            #$inb->save();
 
             $inb1 = new MLABNEWInbox;
 
