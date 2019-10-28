@@ -203,7 +203,7 @@ class ReceiverController extends Controller
             case 1:
                 $ch = curl_init();
 
-                curl_setopt($ch, CURLOPT_URL, "https://c4c.localhost/core");
+                curl_setopt($ch, CURLOPT_URL, "http://c4c.localhost/core");
                 curl_setopt($ch, CURLOPT_HEADER, 0);
                 curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
                 curl_exec($ch);
@@ -216,7 +216,7 @@ class ReceiverController extends Controller
                 
                 $ch = curl_init();
 
-                curl_setopt($ch, CURLOPT_URL, "https://ushauri.localhost/chore/receiver/$LastInsertId");
+                curl_setopt($ch, CURLOPT_URL, "http://ushauri.localhost/chore/receiver/$LastInsertId");
                 curl_setopt($ch, CURLOPT_HEADER, 0);
                 curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
 
@@ -227,7 +227,7 @@ class ReceiverController extends Controller
                 //ushauri new
                 $ch = curl_init();
 
-                curl_setopt($ch, CURLOPT_URL, "https://ushaurinew.localhost/chore/receiver/$LastInsertId");
+                curl_setopt($ch, CURLOPT_URL, "http://ushaurinew.localhost/chore/receiver/$LastInsertId");
                 curl_setopt($ch, CURLOPT_HEADER, 0);
                 curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
                 curl_exec($ch);
@@ -238,7 +238,7 @@ class ReceiverController extends Controller
             case 3:
                 $ch = curl_init();
 
-                curl_setopt($ch, CURLOPT_URL, "https://mlab.localhost/process/inbox/$LastInsertId");
+                curl_setopt($ch, CURLOPT_URL, "http://mlab.localhost/process/inbox/$LastInsertId");
                 curl_setopt($ch, CURLOPT_HEADER, 0);
                 curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
                 curl_exec($ch);
@@ -253,7 +253,7 @@ class ReceiverController extends Controller
             case 4:
                 $ch = curl_init();
 
-                curl_setopt($ch, CURLOPT_URL, "https://t4a.localhost/chore/receiver/$LastInsertId");
+                curl_setopt($ch, CURLOPT_URL, "http://t4a.localhost/chore/receiver/$LastInsertId");
                 curl_setopt($ch, CURLOPT_HEADER, 0);
                 curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
                 curl_exec($ch);
@@ -277,7 +277,7 @@ class ReceiverController extends Controller
                 // C4C Test URL
 
                 $ch = curl_init();
-                curl_setopt($ch, CURLOPT_URL, "https://c4c-test.localhost/core");
+                curl_setopt($ch, CURLOPT_URL, "http://c4c-test.localhost/core");
                 curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
                 curl_setopt($ch, CURLOPT_HEADER, 0);
 
