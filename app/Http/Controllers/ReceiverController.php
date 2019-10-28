@@ -244,7 +244,7 @@ class ReceiverController extends Controller
 
                 curl_close($ch);
 
-                echo 'Done task 4';
+                echo 'Done task 3';
 
             break;
 
